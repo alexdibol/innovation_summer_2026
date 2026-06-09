@@ -396,18 +396,6 @@ Students should treat all course outputs as learning instruments, not as instruc
 
 ---
 
-## Repository Contents
-
-This repository is intended to host the course landing page and related public-facing materials.
-
-Typical contents may include:
-
-- `index.html` — the main landing page;
-- `README.md` — this repository description;
-- supporting assets, if applicable;
-- future updates to course access links or documentation.
-
----
 
 ## Author
 
