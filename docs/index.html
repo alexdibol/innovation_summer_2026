@@ -1,1 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Innovation in Emerging Markets | Cambridge Judge Business School</title>
+  <style>
+    :root {
+      --cambridge-blue: #003c71;
+      --cambridge-light: #e8f1f8;
+      --ink: #18212f;
+      --muted: #5f6b7a;
+      --line: #d8e1ea;
+      --paper: #ffffff;
+      --soft: #f6f8fb;
+      --accent: #b48a2c;
+      --accent-soft: #fff5dc;
+      --shadow: 0 18px 45px rgba(0, 35, 70, 0.12);
+      --radius: 22px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cambridge-blue);
+    }
+
+    .brand span {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover {
+      color: var(--cambridge-blue);
+      background: var(--cambridge-light);
+    }
+
+    .hero {
+      padding: 78px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--cambridge-blue);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 5.05rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      color: var(--cambridge-blue);
+      margin-bottom: 26px;
+    }
+
+    .hero-copy {
+      font-size: 1.17rem;
+      color: #344255;
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+    }
+
+    .button.primary {
+      background: var(--cambridge-blue);
+      color: white;
+      box-shadow: 0 10px 24px rgba(0, 60, 113, 0.18);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(0, 60, 113, 0.23);
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--cambridge-blue);
+      border-color: var(--line);
+    }
+
+    .button.secondary:hover {
+      background: var(--cambridge-light);
+    }
+
+    .hero-panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .hero-panel h2 {
+      color: var(--cambridge-blue);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero-panel p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      color: #354255;
+    }
+
+    .mini-list div {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: #fbfdff;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-header {
+      max-width: 840px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    h2.section-title {
+      color: var(--cambridge-blue);
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .six-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pillar,
+    .part-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(0, 35, 70, 0.06);
+    }
+
+    .pillar .number,
+    .part-card .number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--cambridge-light);
+      color: var(--cambridge-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .pillar h3,
+    .part-card h3 {
+      color: var(--cambridge-blue);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .pillar p,
+    .part-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .resource-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 34px rgba(0, 35, 70, 0.075);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .resource-card-header {
+      padding: 24px 24px 18px;
+      background: linear-gradient(135deg, #ffffff 0%, #f3f7fb 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .resource-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .resource-card h3 {
+      color: var(--cambridge-blue);
+      font-size: 1.45rem;
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .resource-links {
+      padding: 22px 24px 24px;
+      display: grid;
+      gap: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 13px 14px;
+      color: var(--cambridge-blue);
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+
+    .resource-link:hover {
+      background: var(--cambridge-light);
+      transform: translateY(-1px);
+    }
+
+    .resource-link span:last-child {
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .access-strip {
+      border-radius: var(--radius);
+      background: var(--cambridge-blue);
+      color: white;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .access-strip h2 {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .access-strip p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.03rem;
+    }
+
+    .access-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .access-buttons a {
+      background: white;
+      color: var(--cambridge-blue);
+      border-radius: 999px;
+      padding: 12px 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .footer {
+      padding: 44px 0 54px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .resource-grid,
+      .pillars,
+      .six-grid,
+      .access-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .access-buttons {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page,
+      .topbar-inner,
+      .footer-inner {
+        width: min(100% - 26px, 1180px);
+      }
+
+      .hero-panel,
+      .pillar,
+      .part-card,
+      .resource-card-header,
+      .resource-links,
+      .access-strip {
+        padding: 20px;
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <strong>Judge Business School · University of Cambridge</strong>
+        <span>Financial Innovation in Emerging Markets · Course Resource Landing Page</span>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#course">Course</a>
+        <a href="#framework">Framework</a>
+        <a href="#materials">Materials</a>
+        <a href="#sessions">Sessions</a>
+        <a href="#access">Quick Access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page" id="course">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Master of Finance · Financial Innovation</div>
+          <h1>Financial Innovation in Emerging Markets</h1>
+          <p class="hero-copy">
+            This landing page provides a single, orderly point of access for the Financial Innovation in Emerging Markets course at Cambridge Judge Business School. The course treats financial innovation not as a parade of fashionable products, but as the disciplined redesign of how societies organize trust, capital, risk, information, incentives, access, and accountability under uncertainty.
+          </p>
+          <p class="hero-copy">
+            The course moves from institutional architecture to incomplete markets, from trading and settlement infrastructure to cryptography and tokenization, from artificial intelligence to world mega trends. Its central concern is judgment: how to recognize when innovation solves a real financial friction, when it merely dresses novelty in impressive vocabulary, and when it creates new fragilities that must be governed.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#materials">Access Course Materials</a>
+            <a class="button secondary" href="#framework">View Course Framework</a>
+            <a class="button secondary" href="#sessions">Open Session Decks</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Course summary">
+          <h2>Course Orientation</h2>
+          <p>
+            Financial innovation is studied here as a living architecture of discovery, implementation, improvement, and stewardship. Students learn to ask what problem an innovation solves, how its mechanism works, who benefits, who bears risk, whether it can scale, and what must be redesigned after stress.
+          </p>
+          <div class="mini-list">
+            <div><strong>Purpose:</strong> Build professional judgment about financial invention in developed and emerging markets.</div>
+            <div><strong>Core lens:</strong> Trust, law, governance, market incompleteness, infrastructure, technology, inclusion, and moral responsibility.</div>
+            <div><strong>Method:</strong> Move repeatedly from case to mechanism, from mechanism to institution, and from institution to stewardship.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page" id="framework">
+      <div class="section-header">
+        <div class="section-kicker">Course Framework</div>
+        <h2 class="section-title">A map of financial invention under responsibility</h2>
+        <p class="section-copy">
+          The course is built around the idea that financial innovation cannot be taught as a list of instruments. A payment system is not only a rail for moving money. A derivative is not only a payoff formula. A blockchain is not only a database. An AI-enabled workflow is not only automation. Each innovation becomes meaningful only when embedded in institutions, rules, incentives, governance structures, user behavior, and systems of accountability.
+        </p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <div class="number">1</div>
+          <h3>Discovery</h3>
+          <p>
+            Students learn where financial ideas come from: recurring problems of time, trust, coordination, access, risk, information, documentation, liquidity, and enforcement. The first discipline is to identify the underlying friction rather than celebrate novelty for its own sake.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="number">2</div>
+          <h3>Implementation</h3>
+          <p>
+            The course then asks how ideas become real: through legal architecture, institutional design, market infrastructure, platform economics, cryptographic systems, AI workflows, and organizational routines that allow innovation to operate beyond the slide deck.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="number">3</div>
+          <h3>Improvement and Stewardship</h3>
+          <p>
+            Every innovation is treated as provisional. Adoption reveals weaknesses, crises expose hidden fragilities, and scale creates new responsibilities. The course therefore ends where serious finance must end: with judgment, redesign, governance, and human responsibility.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="map">
+      <div class="section-header">
+        <div class="section-kicker">Six-Part Architecture</div>
+        <h2 class="section-title">The intellectual route through the course</h2>
+        <p class="section-copy">
+          The learning journey is cumulative. It begins with institutional foundations, moves through incomplete markets and inclusion, enters payments and market infrastructure, studies mathematically driven innovation, confronts the advent of AI, and concludes with the world forces that will reshape finance in the decades ahead.
+        </p>
+      </div>
+
+      <div class="six-grid">
+        <article class="part-card">
+          <div class="number">I</div>
+          <h3>The Architecture of Financial Innovation</h3>
+          <p>Frameworks, legal design, organizational purpose, and the conditions under which innovation becomes durable rather than fashionable.</p>
+        </article>
+        <article class="part-card">
+          <div class="number">II</div>
+          <h3>Financial Innovation in Incomplete Markets</h3>
+          <p>Inflation indexation, policy design, securitization, inclusion, microfinance, remittances, and innovation under scarcity or weak infrastructure.</p>
+        </article>
+        <article class="part-card">
+          <div class="number">III</div>
+          <h3>Trading and Settlement: Payments Systems</h3>
+          <p>The hidden rails of value transfer: payments, messaging, market coordination, securities settlement, liquidity, and system resilience.</p>
+        </article>
+        <article class="part-card">
+          <div class="number">IV</div>
+          <h3>Math Driven Innovation</h3>
+          <p>Cryptography, Bitcoin, blockchain architecture, tokenization, Web3, and digitally native mechanisms for verification, exchange, and ownership.</p>
+        </article>
+        <article class="part-card">
+          <div class="number">V</div>
+          <h3>The Advent of AI</h3>
+          <p>AI as infrastructure, workflow architecture, cyber-strategic risk, venture challenge, macroeconomic force, labor shock, and moral test.</p>
+        </article>
+        <article class="part-card">
+          <div class="number">VI</div>
+          <h3>World Mega Trends and Innovation</h3>
+          <p>Polycrisis, demographics, pensions, industrial revolutions, superintelligence, sustainability, and the rebalancing of global financial power.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="materials">
+      <div class="section-header">
+        <div class="section-kicker">Materials Library</div>
+        <h2 class="section-title">The book is the central hub of the course ecosystem</h2>
+        <p class="section-copy">
+          The course materials are designed as a multi-layer learning system. The written chapter develops the main analytical argument. The deck compresses the topic into a visual structure for review. Companion resources allow students to revisit the same ideas through different formats and at different levels of depth.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Core Book</div>
+            <h3>Readings in Financial Innovation</h3>
+            <p>
+              The full course book: a guided expedition through the institutional, technological, legal, mathematical, and moral evolution of finance, with special attention to emerging markets, incomplete markets, inclusion, AI, tokenization, sustainability, and governance.
+            </p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/141oEeAJz7_j37j_LB2jRSCbYAIJIknEI/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Course Book</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">How to Use the Materials</div>
+            <h3>Read · Review · Discuss · Apply</h3>
+            <p>
+              Students can use the book for the full argument, the decks for conceptual compression, class discussion for interpretation, and case analysis for judgment. The recommended rhythm is simple: read the chapter, use the deck to review, identify the mechanism, and ask what the innovation improves or endangers.
+            </p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="#sessions"><span>Open Session Decks</span><span>↓</span></a>
+            <a class="resource-link" href="#access"><span>Quick Access Panel</span><span>↓</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="sessions">
+      <div class="section-header">
+        <div class="section-kicker">Session Decks</div>
+        <h2 class="section-title">Six sessions, one cumulative intellectual journey</h2>
+        <p class="section-copy">
+          The session decks organize the classroom path through the course. They provide the visual and conceptual structure for moving from institutional architecture to incomplete markets, payments, mathematical innovation, AI, and global mega trends.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 01</div>
+            <h3>Financial Innovation as Institutional Architecture</h3>
+            <p>Start with the foundations: purpose, legal design, governance, organizational coherence, and why innovation in finance is always more than a new product.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1t7xmL4SZdY1GNvv2CULOIym0Py9suPjK/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 1 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 02</div>
+            <h3>Incomplete Markets and Emerging-Market Ingenuity</h3>
+            <p>Study how innovation responds to inflation, weak documentation, scarcity, exclusion, poverty finance, remittances, policy constraint, and fragile trust.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1sCAT5mt_emYn0LS0T8jVkEnPVPGEYM5J/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 2 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 03</div>
+            <h3>Trading, Settlement, and Payment Infrastructure</h3>
+            <p>Enter the hidden systems that allow value, securities, messages, liquidity, and strategic interaction to move across markets and borders.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1XK-gU4Wqj4QpDwhew_AEf15Ukxoeb_WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 3 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 04</div>
+            <h3>Cryptography, Blockchain, Tokenization, and Web3</h3>
+            <p>Explore math-driven innovation and the redesign of verification, ownership, exchange, settlement, and digitally native claims.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1O6eekDdHZNsZbkFIsOFtP1y0ryMcxPXc/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 4 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 05</div>
+            <h3>AI as Financial Infrastructure</h3>
+            <p>Consider AI as workflow architecture, business infrastructure, cyber risk, macroeconomic force, labor shock, venture problem, and moral challenge.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1RLjqp1DUjOQRHTKR9cGfqd0GqGS47wcR/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 5 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-card-header">
+            <div class="resource-label">Session 06</div>
+            <h3>World Mega Trends and Financial Stewardship</h3>
+            <p>Close the course by connecting innovation to polycrisis, demographics, pensions, sustainability, industrial revolutions, superintelligence, and global power.</p>
+          </div>
+          <div class="resource-links">
+            <a class="resource-link" href="https://drive.google.com/file/d/1xC1ugDrw8_15AnVhRzAPINc4xOybv-OL/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 6 Deck</span><span>↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="outcomes">
+      <div class="section-header">
+        <div class="section-kicker">What the Learner Gains</div>
+        <h2 class="section-title">From recognition to explanation, judgment, and stewardship</h2>
+        <p class="section-copy">
+          By the end of the course, students should be able to explain financial innovation as a process of discovery, implementation, governance, and improvement; distinguish technological novelty from durable institutional innovation; analyze incomplete markets; interpret payment and settlement systems; evaluate blockchain, tokenization, Web3, and AI through governance criteria; and articulate the moral responsibility of financial professionals as stewards of systems that affect opportunity, resilience, and human dignity.
+        </p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar">
+          <div class="number">A</div>
+          <h3>Institutional Interpretation</h3>
+          <p>
+            See finance as an architecture of agreements, standards, rights, obligations, markets, infrastructure, governance, and trust rather than as a catalogue of instruments.
+          </p>
+        </article>
+        <article class="pillar">
+          <div class="number">B</div>
+          <h3>Mechanism Analysis</h3>
+          <p>
+            Explain how each innovation actually works: contractually, organizationally, technologically, mathematically, computationally, or macro-systemically.
+          </p>
+        </article>
+        <article class="pillar">
+          <div class="number">C</div>
+          <h3>Innovation Judgment</h3>
+          <p>
+            Evaluate problem fit, institutional fit, scalability, risk creation, governance quality, and the improvement logic required after stress or adoption.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page" id="access">
+      <div class="access-strip">
+        <div>
+          <h2>Start with the book, then follow the session path</h2>
+          <p>
+            For first-time visitors, begin with the course book to understand the full intellectual arc. Then use the six session decks as the classroom route through the material. The recommended discipline is to ask, for every case: what problem does it solve, how does it work, who benefits, who bears risk, can it scale, and what must be governed or improved?
+          </p>
+        </div>
+        <div class="access-buttons">
+          <a href="https://drive.google.com/file/d/141oEeAJz7_j37j_LB2jRSCbYAIJIknEI/view?usp=sharing" target="_blank" rel="noopener noreferrer">Course Book</a>
+          <a href="https://drive.google.com/file/d/1t7xmL4SZdY1GNvv2CULOIym0Py9suPjK/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 1</a>
+          <a href="https://drive.google.com/file/d/1sCAT5mt_emYn0LS0T8jVkEnPVPGEYM5J/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 2</a>
+          <a href="https://drive.google.com/file/d/1XK-gU4Wqj4QpDwhew_AEf15Ukxoeb_WZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 3</a>
+          <a href="https://drive.google.com/file/d/1O6eekDdHZNsZbkFIsOFtP1y0ryMcxPXc/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 4</a>
+          <a href="https://drive.google.com/file/d/1RLjqp1DUjOQRHTKR9cGfqd0GqGS47wcR/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 5</a>
+          <a href="https://drive.google.com/file/d/1xC1ugDrw8_15AnVhRzAPINc4xOybv-OL/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 6</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Financial Innovation in Emerging Markets</strong><br />
+        Cambridge Judge Business School · University of Cambridge
+      </div>
+      <div>
+        Prepared as a landing page for course presentation and easy material access.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
