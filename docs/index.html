@@ -7,7 +7,7 @@
   <style>
     :root {
       --cambridge-blue: #003c71;
-      --cambridge-deep: #00284d;
+      --cambridge-deep: #102b4c;
       --cambridge-light: #e8f1f8;
       --ink: #18212f;
       --muted: #5f6b7a;
@@ -16,26 +16,33 @@
       --soft: #f6f8fb;
       --accent: #b48a2c;
       --accent-soft: #fff5dc;
-      --quantum: #4b2e83;
-      --quantum-soft: #f0ebff;
+      --quantum: #46327e;
+      --quantum-soft: #f2effa;
       --shadow: 0 18px 45px rgba(0, 35, 70, 0.12);
       --radius: 22px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Georgia, 'Times New Roman', serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top right, rgba(75, 46, 131, 0.10), transparent 32rem),
-        linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
       line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .page {
       width: min(1180px, calc(100% - 40px));
@@ -61,7 +68,11 @@
       gap: 24px;
     }
 
-    .brand { display: flex; flex-direction: column; gap: 2px; }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
     .brand strong {
       font-size: 0.95rem;
@@ -70,23 +81,33 @@
       color: var(--cambridge-blue);
     }
 
-    .brand span { font-size: 0.88rem; color: var(--muted); }
+    .brand span {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
 
     .nav {
       display: flex;
-      gap: 14px;
+      gap: 18px;
       align-items: center;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.88rem;
       color: var(--muted);
-      white-space: nowrap;
     }
 
-    .nav a { padding: 8px 10px; border-radius: 999px; }
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
 
-    .nav a:hover { color: var(--cambridge-blue); background: var(--cambridge-light); }
+    .nav a:hover {
+      color: var(--cambridge-blue);
+      background: var(--cambridge-light);
+    }
 
-    .hero { padding: 78px 0 48px; }
+    .hero {
+      padding: 78px 0 48px;
+    }
 
     .hero-grid {
       display: grid;
@@ -132,8 +153,8 @@
     .hero-copy {
       font-size: 1.17rem;
       color: #344255;
-      max-width: 780px;
-      margin-bottom: 26px;
+      max-width: 760px;
+      margin-bottom: 32px;
     }
 
     .hero-actions {
@@ -141,7 +162,6 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-top: 28px;
     }
 
     .button {
@@ -163,15 +183,20 @@
       box-shadow: 0 10px 24px rgba(0, 60, 113, 0.18);
     }
 
-    .button.primary:hover { transform: translateY(-1px); box-shadow: 0 16px 30px rgba(0, 60, 113, 0.23); }
+    .button.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(0, 60, 113, 0.23);
+    }
 
-    .button.secondary { background: white; color: var(--cambridge-blue); border-color: var(--line); }
+    .button.secondary {
+      background: white;
+      color: var(--cambridge-blue);
+      border-color: var(--line);
+    }
 
-    .button.secondary:hover { background: var(--cambridge-light); }
-
-    .button.quantum { background: var(--quantum); color: white; box-shadow: 0 10px 24px rgba(75, 46, 131, 0.18); }
-
-    .button.quantum:hover { transform: translateY(-1px); box-shadow: 0 16px 30px rgba(75, 46, 131, 0.24); }
+    .button.secondary:hover {
+      background: var(--cambridge-light);
+    }
 
     .hero-panel {
       background: var(--paper);
@@ -181,9 +206,18 @@
       padding: 28px;
     }
 
-    .hero-panel h2 { color: var(--cambridge-blue); font-size: 1.35rem; line-height: 1.2; margin-bottom: 14px; }
+    .hero-panel h2 {
+      color: var(--cambridge-blue);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
 
-    .hero-panel p { color: var(--muted); font-size: 1rem; margin-bottom: 20px; }
+    .hero-panel p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
 
     .mini-list {
       display: grid;
@@ -200,9 +234,14 @@
       background: #fbfdff;
     }
 
-    section { padding: 42px 0; }
+    section {
+      padding: 42px 0;
+    }
 
-    .section-header { max-width: 880px; margin-bottom: 28px; }
+    .section-header {
+      max-width: 840px;
+      margin-bottom: 28px;
+    }
 
     .section-kicker {
       font-family: Arial, Helvetica, sans-serif;
@@ -214,8 +253,6 @@
       margin-bottom: 8px;
     }
 
-    .section-kicker.quantum { color: var(--quantum); }
-
     h2.section-title {
       color: var(--cambridge-blue);
       font-size: clamp(1.8rem, 3vw, 2.55rem);
@@ -224,15 +261,20 @@
       margin-bottom: 12px;
     }
 
-    .section-copy { color: var(--muted); font-size: 1.08rem; }
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
 
-    .pillars, .seven-grid {
+    .pillars,
+    .seven-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .pillar, .part-card {
+    .pillar,
+    .part-card {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -240,7 +282,8 @@
       box-shadow: 0 10px 28px rgba(0, 35, 70, 0.06);
     }
 
-    .pillar .number, .part-card .number {
+    .pillar .number,
+    .part-card .number {
       width: 42px;
       height: 42px;
       border-radius: 50%;
@@ -255,8 +298,8 @@
     }
 
     .part-card.bonus {
-      border-color: rgba(75, 46, 131, 0.30);
-      background: linear-gradient(135deg, #ffffff 0%, var(--quantum-soft) 100%);
+      border-color: rgba(70, 50, 126, 0.32);
+      background: linear-gradient(180deg, #ffffff 0%, var(--quantum-soft) 100%);
     }
 
     .part-card.bonus .number {
@@ -264,11 +307,23 @@
       color: white;
     }
 
-    .pillar h3, .part-card h3 { color: var(--cambridge-blue); font-size: 1.2rem; margin-bottom: 10px; line-height: 1.25; }
+    .part-card.bonus h3 {
+      color: var(--quantum);
+    }
 
-    .part-card.bonus h3 { color: var(--quantum); }
+    .pillar h3,
+    .part-card h3 {
+      color: var(--cambridge-blue);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
 
-    .pillar p, .part-card p { color: var(--muted); font-size: 0.98rem; }
+    .pillar p,
+    .part-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
 
     .resource-grid {
       display: grid;
@@ -287,19 +342,13 @@
       min-height: 100%;
     }
 
-    .resource-card.featured {
-      border-color: rgba(75, 46, 131, 0.28);
-      box-shadow: 0 18px 42px rgba(75, 46, 131, 0.12);
-    }
-
     .resource-card-header {
       padding: 24px 24px 18px;
       background: linear-gradient(135deg, #ffffff 0%, #f3f7fb 100%);
       border-bottom: 1px solid var(--line);
-      flex: 1;
     }
 
-    .resource-card.featured .resource-card-header {
+    .resource-card.bonus .resource-card-header {
       background: linear-gradient(135deg, #ffffff 0%, var(--quantum-soft) 100%);
     }
 
@@ -313,19 +362,32 @@
       margin-bottom: 8px;
     }
 
-    .resource-card.featured .resource-label { color: var(--quantum); }
+    .resource-card.bonus .resource-label {
+      color: var(--quantum);
+    }
 
-    .resource-card h3 { color: var(--cambridge-blue); font-size: 1.45rem; line-height: 1.18; margin-bottom: 10px; }
+    .resource-card h3 {
+      color: var(--cambridge-blue);
+      font-size: 1.45rem;
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
 
-    .resource-card.featured h3 { color: var(--quantum); }
+    .resource-card.bonus h3 {
+      color: var(--quantum);
+    }
 
-    .resource-card p { color: var(--muted); font-size: 0.98rem; }
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
 
     .resource-links {
       padding: 22px 24px 24px;
       display: grid;
       gap: 12px;
       font-family: Arial, Helvetica, sans-serif;
+      margin-top: auto;
     }
 
     .resource-link {
@@ -342,89 +404,32 @@
       transition: all 0.18s ease;
     }
 
-    .resource-card.featured .resource-link { color: var(--quantum); }
-
-    .resource-link:hover { background: var(--cambridge-light); transform: translateY(-1px); }
-
-    .resource-card.featured .resource-link:hover { background: var(--quantum-soft); }
-
-    .resource-link span:last-child { color: var(--accent); white-space: nowrap; }
-
-    .resource-card.featured .resource-link span:last-child { color: var(--quantum); }
-
-    .bonus-section {
-      border-radius: calc(var(--radius) + 8px);
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.22), transparent 16rem),
-        linear-gradient(135deg, var(--cambridge-deep) 0%, var(--quantum) 100%);
-      color: white;
-      padding: 42px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
+    .resource-link:hover {
+      background: var(--cambridge-light);
+      transform: translateY(-1px);
     }
 
-    .bonus-section::after {
-      content: '';
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      right: -110px;
-      top: -100px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: inset 0 0 0 34px rgba(255, 255, 255, 0.04);
+    .resource-link span:last-child {
+      color: var(--accent);
+      white-space: nowrap;
     }
 
-    .bonus-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 30px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-
-    .bonus-section .section-kicker { color: #e8d59b; }
-
-    .bonus-section h2 {
-      font-size: clamp(1.9rem, 3.3vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-    }
-
-    .bonus-section p { color: rgba(255, 255, 255, 0.84); font-size: 1.05rem; margin-bottom: 16px; }
-
-    .quantum-topics {
-      display: grid;
-      gap: 12px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .quantum-topics div {
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 16px;
-      padding: 13px 14px;
-      background: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .quantum-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .quantum-actions a {
-      background: white;
+    .resource-card.bonus .resource-link {
       color: var(--quantum);
-      border-radius: 999px;
-      padding: 12px 15px;
-      font-weight: 800;
-      font-size: 0.9rem;
+    }
+
+    .resource-card.bonus .resource-link:hover {
+      background: var(--quantum-soft);
+    }
+
+    .session-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(70, 50, 126, 0.22);
+      border-radius: 18px;
+      background: var(--quantum-soft);
+      color: #42385d;
+      font-size: 1rem;
     }
 
     .access-strip {
@@ -439,11 +444,23 @@
       box-shadow: var(--shadow);
     }
 
-    .access-strip h2 { font-size: 2rem; line-height: 1.1; margin-bottom: 10px; }
+    .access-strip h2 {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
 
-    .access-strip p { color: rgba(255, 255, 255, 0.82); font-size: 1.03rem; }
+    .access-strip p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.03rem;
+    }
 
-    .access-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+    .access-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
 
     .access-buttons a {
       background: white;
@@ -455,7 +472,10 @@
       font-size: 0.88rem;
     }
 
-    .access-buttons a.bonus-link { color: var(--quantum); background: var(--quantum-soft); }
+    .access-buttons a.bonus-link {
+      color: var(--quantum);
+      background: #f8f4ff;
+    }
 
     .footer {
       padding: 44px 0 54px;
@@ -475,20 +495,48 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 1020px) {
-      .nav { display: none; }
-    }
-
     @media (max-width: 900px) {
-      .hero-grid, .resource-grid, .pillars, .seven-grid, .access-strip, .bonus-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 48px; }
-      .access-buttons { justify-content: flex-start; }
+      .hero-grid,
+      .resource-grid,
+      .pillars,
+      .seven-grid,
+      .access-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .access-buttons {
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 560px) {
-      .page, .topbar-inner, .footer-inner { width: min(100% - 26px, 1180px); }
-      .hero-panel, .pillar, .part-card, .resource-card-header, .resource-links, .access-strip, .bonus-section { padding: 20px; }
-      .hero-actions, .button { width: 100%; }
+      .page,
+      .topbar-inner,
+      .footer-inner {
+        width: min(100% - 26px, 1180px);
+      }
+
+      .hero-panel,
+      .pillar,
+      .part-card,
+      .resource-card-header,
+      .resource-links,
+      .access-strip {
+        padding: 20px;
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -504,7 +552,6 @@
         <a href="#framework">Framework</a>
         <a href="#materials">Materials</a>
         <a href="#sessions">Sessions</a>
-        <a href="#bonus-session">Bonus Session 7</a>
         <a href="#access">Quick Access</a>
       </nav>
     </div>
@@ -520,13 +567,12 @@
             This landing page provides a single, orderly point of access for the Financial Innovation in Emerging Markets course at Cambridge Judge Business School. The course treats financial innovation not as a parade of fashionable products, but as the disciplined redesign of how societies organize trust, capital, risk, information, incentives, access, and accountability under uncertainty.
           </p>
           <p class="hero-copy">
-            The course moves from institutional architecture to incomplete markets, from trading and settlement infrastructure to cryptography and tokenization, from artificial intelligence to world mega trends. It now includes a special bonus session on the advent of quantum computing in finance, supported by a dedicated repository containing an umbrella essay, research papers, and executable notebooks on quantum forecasting, trading, portfolio optimization, and quantum de-encryption.
+            The course moves from institutional architecture to incomplete markets, from trading and settlement infrastructure to cryptography and tokenization, from artificial intelligence to world mega trends. Its central concern is judgment: how to recognize when innovation solves a real financial friction, when it merely dresses novelty in impressive vocabulary, and when it creates new fragilities that must be governed.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#materials">Access Course Materials</a>
             <a class="button secondary" href="#framework">View Course Framework</a>
             <a class="button secondary" href="#sessions">Open Session Decks</a>
-            <a class="button quantum" href="#bonus-session">Bonus Session 7</a>
           </div>
         </div>
 
@@ -537,8 +583,8 @@
           </p>
           <div class="mini-list">
             <div><strong>Purpose:</strong> Build professional judgment about financial invention in developed and emerging markets.</div>
-            <div><strong>Core lens:</strong> Trust, law, governance, market incompleteness, infrastructure, technology, inclusion, computation, and moral responsibility.</div>
-            <div><strong>New bonus layer:</strong> Quantum computing as a representational, computational, and governance frontier for finance.</div>
+            <div><strong>Core lens:</strong> Trust, law, governance, market incompleteness, infrastructure, technology, inclusion, and moral responsibility.</div>
+            <div><strong>Method:</strong> Move repeatedly from case to mechanism, from mechanism to institution, and from institution to stewardship.</div>
           </div>
         </aside>
       </div>
@@ -549,7 +595,7 @@
         <div class="section-kicker">Course Framework</div>
         <h2 class="section-title">A map of financial invention under responsibility</h2>
         <p class="section-copy">
-          The course is built around the idea that financial innovation cannot be taught as a list of instruments. A payment system is not only a rail for moving money. A derivative is not only a payoff formula. A blockchain is not only a database. An AI-enabled workflow is not only automation. A quantum algorithm is not only a mysterious speedup. Each innovation becomes meaningful only when embedded in institutions, rules, incentives, governance structures, user behavior, and systems of accountability.
+          The course is built around the idea that financial innovation cannot be taught as a list of instruments. A payment system is not only a rail for moving money. A derivative is not only a payoff formula. A blockchain is not only a database. An AI-enabled workflow is not only automation. Each innovation becomes meaningful only when embedded in institutions, rules, incentives, governance structures, user behavior, and systems of accountability.
         </p>
       </div>
 
@@ -558,16 +604,18 @@
           <div class="number">1</div>
           <h3>Discovery</h3>
           <p>
-            Students learn where financial ideas come from: recurring problems of time, trust, coordination, access, risk, information, documentation, liquidity, computation, and enforcement. The first discipline is to identify the underlying friction rather than celebrate novelty for its own sake.
+            Students learn where financial ideas come from: recurring problems of time, trust, coordination, access, risk, information, documentation, liquidity, and enforcement. The first discipline is to identify the underlying friction rather than celebrate novelty for its own sake.
           </p>
         </article>
+
         <article class="pillar">
           <div class="number">2</div>
           <h3>Implementation</h3>
           <p>
-            The course then asks how ideas become real: through legal architecture, institutional design, market infrastructure, platform economics, cryptographic systems, AI workflows, quantum-inspired models, and organizational routines that allow innovation to operate beyond the slide deck.
+            The course then asks how ideas become real: through legal architecture, institutional design, market infrastructure, platform economics, cryptographic systems, AI workflows, and organizational routines that allow innovation to operate beyond the slide deck.
           </p>
         </article>
+
         <article class="pillar">
           <div class="number">3</div>
           <h3>Improvement and Stewardship</h3>
@@ -583,7 +631,7 @@
         <div class="section-kicker">Seven-Part Architecture</div>
         <h2 class="section-title">The intellectual route through the course</h2>
         <p class="section-copy">
-          The learning journey is cumulative. It begins with institutional foundations, moves through incomplete markets and inclusion, enters payments and market infrastructure, studies mathematically driven innovation, confronts the advent of AI, connects finance to world mega trends, and then adds a bonus frontier: quantum computing as a new language for representing financial complexity.
+          The learning journey is cumulative. It begins with institutional foundations, moves through incomplete markets and inclusion, enters payments and market infrastructure, studies mathematically driven innovation, confronts the advent of AI, closes with world mega trends, and adds a compact bonus session on quantum computing in finance.
         </p>
       </div>
 
@@ -621,7 +669,7 @@
         <article class="part-card bonus">
           <div class="number">VII</div>
           <h3>Bonus: Quantum Computing in Finance</h3>
-          <p>Quantum states, amplitudes, phase, interference, Hamiltonians, QAOA intuition, quantum neural networks, Shor workflows, and governed quantum-classical discovery for financial professionals.</p>
+          <p>Quantum representation, portfolio optimization, forecasting, trading, hybrid quantum neural networks, agentic discovery, and post-quantum financial infrastructure risk.</p>
         </article>
       </div>
     </section>
@@ -641,25 +689,11 @@
             <div class="resource-label">Core Book</div>
             <h3>Readings in Financial Innovation</h3>
             <p>
-              The full course book: a guided expedition through the institutional, technological, legal, mathematical, and moral evolution of finance, with special attention to emerging markets, incomplete markets, inclusion, AI, tokenization, sustainability, governance, and now the frontier of quantum computational thinking.
+              The full course book: a guided expedition through the institutional, technological, legal, mathematical, and moral evolution of finance, with special attention to emerging markets, incomplete markets, inclusion, AI, tokenization, sustainability, and governance.
             </p>
           </div>
           <div class="resource-links">
             <a class="resource-link" href="https://drive.google.com/file/d/141oEeAJz7_j37j_LB2jRSCbYAIJIknEI/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Course Book</span><span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="resource-card featured">
-          <div class="resource-card-header">
-            <div class="resource-label">Quantum Essential Repository</div>
-            <h3>Quantum Computing for Financial Professionals</h3>
-            <p>
-              A dedicated repository containing a long umbrella essay, five focused papers, and executable notebooks on quantum portfolio optimization, forecasting, trading, hybrid quantum neural networks, governance-first Shor workflows, and quantum de-encryption as a financial infrastructure question.
-            </p>
-          </div>
-          <div class="resource-links">
-            <a class="resource-link" href="https://github.com/alexdibol/quantum_essential" target="_blank" rel="noopener noreferrer"><span>Open Quantum Repository</span><span>↗</span></a>
-            <a class="resource-link" href="https://drive.google.com/file/d/1Tihn78rQ6muU0pm49B87naq6rFN2Ft01/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Bonus Session Deck</span><span>↗</span></a>
           </div>
         </article>
 
@@ -673,21 +707,7 @@
           </div>
           <div class="resource-links">
             <a class="resource-link" href="#sessions"><span>Open Session Decks</span><span>↓</span></a>
-            <a class="resource-link" href="#bonus-session"><span>Open Bonus Session 7</span><span>↓</span></a>
             <a class="resource-link" href="#access"><span>Quick Access Panel</span><span>↓</span></a>
-          </div>
-        </article>
-
-        <article class="resource-card">
-          <div class="resource-card-header">
-            <div class="resource-label">Learning Discipline</div>
-            <h3>From novelty to mechanism</h3>
-            <p>
-              Every topic is approached through five recurring questions: What problem does it solve? What mechanism makes it work? What institutional conditions must exist? What new risks are created? How should professionals govern, improve, or reject it?
-            </p>
-          </div>
-          <div class="resource-links">
-            <a class="resource-link" href="#outcomes"><span>View Learning Outcomes</span><span>↓</span></a>
           </div>
         </article>
       </div>
@@ -696,9 +716,9 @@
     <section class="page" id="sessions">
       <div class="section-header">
         <div class="section-kicker">Session Decks</div>
-        <h2 class="section-title">Six core sessions and one bonus frontier session</h2>
+        <h2 class="section-title">Six core sessions, plus one compact quantum bonus</h2>
         <p class="section-copy">
-          The session decks organize the classroom path through the course. They provide the visual and conceptual structure for moving from institutional architecture to incomplete markets, payments, mathematical innovation, AI, global mega trends, and the quantum-computing frontier.
+          The session decks organize the classroom path through the course. They provide the visual and conceptual structure for moving from institutional architecture to incomplete markets, payments, mathematical innovation, AI, and global mega trends. The bonus quantum session is included as a short extension, not as a separate landing-page centerpiece.
         </p>
       </div>
 
@@ -762,53 +782,30 @@
           <div class="resource-card-header">
             <div class="resource-label">Session 06</div>
             <h3>World Mega Trends and Financial Stewardship</h3>
-            <p>Close the core course by connecting innovation to polycrisis, demographics, pensions, sustainability, industrial revolutions, superintelligence, and global power.</p>
+            <p>Close the course by connecting innovation to polycrisis, demographics, pensions, sustainability, industrial revolutions, superintelligence, and global power.</p>
           </div>
           <div class="resource-links">
             <a class="resource-link" href="https://drive.google.com/file/d/1xC1ugDrw8_15AnVhRzAPINc4xOybv-OL/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Session 6 Deck</span><span>↗</span></a>
           </div>
         </article>
 
-        <article class="resource-card featured" id="session-7-card">
+        <article class="resource-card bonus">
           <div class="resource-card-header">
             <div class="resource-label">Bonus Session 07</div>
             <h3>The Advent of Quantum Computing in Finance</h3>
-            <p>Explore quantum computing as a frontier of financial representation: forecasting, trading, portfolio optimization, quantum neural networks, Shor-style de-encryption risk, and governance-first quantum-classical workflows.</p>
+            <p>
+              A concise extension on quantum computing as an emerging language for financial representation and computation. The session introduces qubits, superposition, amplitudes, phase, measurement, portfolio optimization, forecasting, trading, hybrid quantum neural networks, agentic financial discovery, and quantum de-encryption as a source of future infrastructure risk.
+            </p>
           </div>
           <div class="resource-links">
             <a class="resource-link" href="https://drive.google.com/file/d/1Tihn78rQ6muU0pm49B87naq6rFN2Ft01/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Open Bonus Session 7 Deck</span><span>↗</span></a>
-            <a class="resource-link" href="https://github.com/alexdibol/quantum_essential" target="_blank" rel="noopener noreferrer"><span>Open Quantum Essential Repository</span><span>↗</span></a>
+            <a class="resource-link" href="https://github.com/alexdibol/quantum_essential" target="_blank" rel="noopener noreferrer"><span>Open Quantum Repository</span><span>↗</span></a>
           </div>
         </article>
       </div>
-    </section>
 
-    <section class="page" id="bonus-session">
-      <div class="bonus-section">
-        <div class="bonus-grid">
-          <div>
-            <div class="section-kicker">Bonus Session 7</div>
-            <h2>The Advent of Quantum Computing in Finance</h2>
-            <p>
-              This special session introduces quantum computing not as science fiction, but as an emerging computational language for financial professionals. The central claim is disciplined: quantum computing should first be understood as a new way to represent financial problems before it is judged only through the narrow question of immediate quantum advantage.
-            </p>
-            <p>
-              The session is supported by a full repository containing a long synthesis essay and five research papers exploring quantum methods for forecasting, trading, portfolio optimization, hybrid quantum neural networks, agentic financial discovery, and quantum de-encryption. The emphasis is educational, conceptual, and governance-first.
-            </p>
-            <div class="quantum-actions">
-              <a href="https://drive.google.com/file/d/1Tihn78rQ6muU0pm49B87naq6rFN2Ft01/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open Deck</a>
-              <a href="https://github.com/alexdibol/quantum_essential" target="_blank" rel="noopener noreferrer">Open Repository</a>
-              <a href="#access">Quick Access</a>
-            </div>
-          </div>
-          <div class="quantum-topics" aria-label="Quantum session topics">
-            <div><strong>Quantum representation:</strong> qubits, states, amplitudes, phase, superposition, measurement, and financial possibility spaces.</div>
-            <div><strong>Portfolio optimization:</strong> candidate portfolios as states, objectives as energy terms, constraints as penalties, and low-energy search.</div>
-            <div><strong>Forecasting and trading:</strong> hybrid quantum-classical models, quantum neural networks, adversarial modeling, and governed discovery workflows.</div>
-            <div><strong>Quantum de-encryption:</strong> Shor-style period finding, cryptographic vulnerability, financial infrastructure risk, and post-quantum governance.</div>
-            <div><strong>Professional judgment:</strong> no hype, no investment advice, no claim of immediate production superiority; focus on learning, auditability, and representation.</div>
-          </div>
-        </div>
+      <div class="session-note">
+        <strong>Note on the bonus session:</strong> quantum computing is presented as an educational and governance-first extension to the course, not as a claim of immediate investment superiority. The objective is to understand how financial problems may be represented in quantum form and why post-quantum resilience matters for future finance.
       </div>
     </section>
 
@@ -833,7 +830,7 @@
           <div class="number">B</div>
           <h3>Mechanism Analysis</h3>
           <p>
-            Explain how each innovation actually works: contractually, organizationally, technologically, mathematically, computationally, cryptographically, or macro-systemically.
+            Explain how each innovation actually works: contractually, organizationally, technologically, mathematically, computationally, or macro-systemically.
           </p>
         </article>
         <article class="pillar">
@@ -851,7 +848,7 @@
         <div>
           <h2>Start with the book, then follow the session path</h2>
           <p>
-            For first-time visitors, begin with the course book to understand the full intellectual arc. Then use the six core session decks as the classroom route through the material, and finish with Bonus Session 7 to examine quantum computing as a new representational frontier for finance. The recommended discipline is to ask, for every case: what problem does it solve, how does it work, who benefits, who bears risk, can it scale, and what must be governed or improved?
+            For first-time visitors, begin with the course book to understand the full intellectual arc. Then use the six core session decks as the classroom route through the material. The bonus quantum session is available as an additional extension for students who want to explore the next computational frontier in finance.
           </p>
         </div>
         <div class="access-buttons">
@@ -862,8 +859,7 @@
           <a href="https://drive.google.com/file/d/1O6eekDdHZNsZbkFIsOFtP1y0ryMcxPXc/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 4</a>
           <a href="https://drive.google.com/file/d/1RLjqp1DUjOQRHTKR9cGfqd0GqGS47wcR/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 5</a>
           <a href="https://drive.google.com/file/d/1xC1ugDrw8_15AnVhRzAPINc4xOybv-OL/view?usp=sharing" target="_blank" rel="noopener noreferrer">Session 6</a>
-          <a class="bonus-link" href="https://drive.google.com/file/d/1Tihn78rQ6muU0pm49B87naq6rFN2Ft01/view?usp=sharing" target="_blank" rel="noopener noreferrer">Bonus 7 Deck</a>
-          <a class="bonus-link" href="https://github.com/alexdibol/quantum_essential" target="_blank" rel="noopener noreferrer">Quantum Repo</a>
+          <a class="bonus-link" href="https://drive.google.com/file/d/1Tihn78rQ6muU0pm49B87naq6rFN2Ft01/view?usp=sharing" target="_blank" rel="noopener noreferrer">Bonus 7</a>
         </div>
       </div>
     </section>
@@ -876,7 +872,7 @@
         Cambridge Judge Business School · University of Cambridge
       </div>
       <div>
-        Prepared as a landing page for course presentation, easy material access, and the Bonus Session 7 quantum-computing extension.
+        Prepared as a landing page for course presentation and easy material access.
       </div>
     </div>
   </footer>
